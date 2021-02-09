@@ -8,7 +8,7 @@
   <input type="text" id="email" name="user[email]"><br><br>
   <input type="submit" value="Submit">
 </form> -->
-<div>
+<!-- <div>
 <%= form_tag '/users', method: :post do %>
   <%= label_tag(:username, "Username:") %>
   <%= text_field_tag(:username) %>
@@ -20,5 +20,17 @@
   <%= text_field_tag(:email) %>
   
   <%= submit_tag("Submit") %>
+<% end %>
+</div>-->
+
+<div>
+<%= form_with model: User.new do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %> <br><br>
+  <%= form.label :password %>
+  <%= form.password_field :password %><br><br>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.submit %>
 <% end %>
 </div>
