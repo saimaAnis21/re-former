@@ -1,3 +1,4 @@
+=begin
 <!-- <form action="/users" method="post" accept-charset="UTF-8">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="username">User name:</label>
@@ -22,9 +23,10 @@
   <%= submit_tag("Submit") %>
 <% end %>
 </div>-->
+=end
 
 <div>
-<%= form_with model: User.new do |form| %>
+<%= form_with model: @user do |form| %>
   <%= form.label :username %>
   <%= form.text_field :username %> <br><br>
   <%= form.label :password %>
