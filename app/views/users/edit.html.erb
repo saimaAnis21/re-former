@@ -27,6 +27,13 @@
 
 <div>
 <%= form_with model: @user do |form| %>
+  <div>
+    <% @user.errors.full_messages.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
   <%= form.label :username %>
   <%= form.text_field :username %> <br><br>
   <%= form.label :password %>
@@ -34,5 +41,6 @@
   <%= form.label :email %>
   <%= form.text_field :email %>
   <%= form.submit %>
+  </div>
 <% end %>
 </div>
